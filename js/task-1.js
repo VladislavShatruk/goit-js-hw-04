@@ -1,8 +1,30 @@
-function makeTransaction(quantity, pricePerDroid, customerCredits){
-    const totalPrice = quantity * pricePerDroid;
-    
-    if (customerCredits < totalPrice) {
-       return "Insufficient funds!";
-    }
-     return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
+console.log("task-1");
+console.log("");
+
+function isEnoughCapacity(products, containerSize) {
+   const values = Object.values(products);
+   let sumProducts = 0;
+
+   for (const product of values) {
+      sumProducts += product;
+   }
+
+   if (sumProducts < containerSize) {
+      return true;
+   }
+   return false;
+
 }
+
+
+
+console.log(isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)); // true
+ 
+console.log(isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)); // false
+ 
+console.log(isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)); // true
+ 
+console.log(isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)); // false
+
+console.log("");
+console.log("");
